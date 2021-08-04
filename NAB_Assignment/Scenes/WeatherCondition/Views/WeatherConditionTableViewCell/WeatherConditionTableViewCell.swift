@@ -25,6 +25,7 @@ class WeatherConditionTableViewCell: UITableViewCell {
             weatherIconImageView.downloadImage(from: condition.weather[0].icon)
         } else if let error = viewModel.error {
             contentLbl.text = error.message
+            weatherIconImageView.image = nil
         }
     }
 }
