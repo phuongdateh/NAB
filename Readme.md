@@ -14,6 +14,24 @@ d. Checklist of items the candidate has done
 - [x] 5. Exception handling (optional)
 - [x] 6. Readme file
 
-### Architecture
- - MVVM with RxSwift
+### Structure Code 
+ - Application: Manage started scene
+ - Common: Include some class using common is ViewModel, ViewController
+ - Config: Include some config for network is appId for request API, Base URL
+ - Extension: Using to define some func using many place in project.
+ - Model: Contain some model of project. For example: WeatherCondition, Weather, ...
+ - Networking: Manage to request API, Network 
+ - Resources: Assets, some file default when init project
+ - Scenes: Screens of app, that contain View (has ViewController and ViewController.xib file), ViewModel for ViewController, ViewModelItem for TableViewCell
+ - Third Party: ActivityIndicator to manage loading
 
+### Third Party
+ - RxSwift: Using to binding viewmodel to view in MVVM
+ - Another way we can use Delegate Parten to binding betweeen ViewModel and View.
+ - Class ActivityIndicator to manage LoadingIndicator
+
+### The software development principles, patterns & practices being applied: 
+* Singleton Design Parten:
+* Application: to manage started scene
+* Dependence Injection: WeatherAPI 
+* MVVM Architecture using with RxSwift: To eazy to create binding between ViewModel and View
