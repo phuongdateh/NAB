@@ -31,8 +31,8 @@ pod install
  - Another way we can use Delegate Parten to binding betweeen ViewModel and View.
  - Class ActivityIndicator to manage LoadingIndicator
 
-### The software development principles, patterns & practices being applied: 
-* Singleton Design Parten:
+### The software development principles, patterns & practices being applied
+* Singleton Design Parten
 * Application: to manage started scene
 * Dependence Injection: WeatherAPI 
 * MVVM Architecture using with RxSwift: To eazy to create binding between ViewModel and View
