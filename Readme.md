@@ -28,6 +28,7 @@ pod install
  - Third-Party: ActivityIndicator to manage loading
 
 ### Third Party
+ - Kingfisher: Using to download image
  - RxSwift: Using to binding ViewModel to view in MVVM
  - Another way we can use Delegate Parten to binding between ViewModel and View.
  - Class ActivityIndicator to manage LoadingIndicator

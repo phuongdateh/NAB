@@ -10,7 +10,7 @@ target 'NAB_Assignment' do
   pod 'RxSwift'
   pod 'RxCocoa'
   
-  # Dowload Image
+  # Download Image
   pod 'Kingfisher'
 
 end
