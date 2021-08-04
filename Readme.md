@@ -17,6 +17,7 @@ pod install
 
 ### Structure Code 
  - Application: Manage started scene
+ - Navigator: to manage navigation to another screen and manage Navigation Controller
  - Common: Include some class using common is ViewModel, ViewController
  - Config: Include some config for a network is appId for request API, Base URL
  - Extension: Using to define some func using many places in a project.

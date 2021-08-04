@@ -20,8 +20,9 @@ class WeatherConditionTableViewCell: UITableViewCell {
     }
     
     func bind(viewModel: WeatherConditionViewModelItem) {
-        if let _ = viewModel.condition {
+        if let condition = viewModel.condition {
             contentLbl.text = viewModel.content
+            weatherIconImageView.downloadImage(from: condition.weather[0].icon)
         } else if let error = viewModel.error {
             contentLbl.text = error.message
         }

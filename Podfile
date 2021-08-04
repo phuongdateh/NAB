@@ -9,5 +9,8 @@ target 'NAB_Assignment' do
   
   pod 'RxSwift'
   pod 'RxCocoa'
+  
+  # Dowload Image
+  pod 'Kingfisher'
 
 end

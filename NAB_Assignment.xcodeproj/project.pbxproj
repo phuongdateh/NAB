@@ -39,6 +39,7 @@
 		A440570526B99A3200DC6D62 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A440570426B99A3200DC6D62 /* ActivityIndicator.swift */; };
 		A440570726B9B32D00DC6D62 /* WeatherConditionViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A440570626B9B32D00DC6D62 /* WeatherConditionViewModelItem.swift */; };
 		A440570926B9BFAF00DC6D62 /* RxSwift+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A440570826B9BFAF00DC6D62 /* RxSwift+Ext.swift */; };
+		A49B1A5426BAE689002CCE5C /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B1A5326BAE689002CCE5C /* UIImageView.swift */; };
 		B207B8E23DF398132C19DB77 /* Pods_NAB_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A390BD89ED26F31FFCA113B /* Pods_NAB_Assignment.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		A440570426B99A3200DC6D62 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		A440570626B9B32D00DC6D62 /* WeatherConditionViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherConditionViewModelItem.swift; sourceTree = "<group>"; };
 		A440570826B9BFAF00DC6D62 /* RxSwift+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Ext.swift"; sourceTree = "<group>"; };
+		A49B1A5326BAE689002CCE5C /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		C1FB49B261BB8D845B53DB25 /* Pods-NAB_Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NAB_Assignment.debug.xcconfig"; path = "Target Support Files/Pods-NAB_Assignment/Pods-NAB_Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,6 +198,7 @@
 				A44056F226B9821A00DC6D62 /* String.swift */,
 				A440570826B9BFAF00DC6D62 /* RxSwift+Ext.swift */,
 				A422B04826BA4A8000BF605C /* UITableViewCell.swift */,
+				A49B1A5326BAE689002CCE5C /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				A44056EA26B95B4C00DC6D62 /* ForecastDailyRequest.swift in Sources */,
 				A440570126B9997700DC6D62 /* ViewModel.swift in Sources */,
 				A44056F926B998E800DC6D62 /* WeatherConditionViewController.swift in Sources */,
+				A49B1A5426BAE689002CCE5C /* UIImageView.swift in Sources */,
 				A440570926B9BFAF00DC6D62 /* RxSwift+Ext.swift in Sources */,
 				A434CCB826B821DD007FC211 /* AppDelegate.swift in Sources */,
 				A440570526B99A3200DC6D62 /* ActivityIndicator.swift in Sources */,

@@ -12,5 +12,6 @@ struct Configs {
     struct Network {
         static let appId: String = "60c6fbeb4b93ac653c492ba806fc346d"
         static let weatherUrl: String = "https://api.openweathermap.org/data/\(Configs.apiVersion)"
+        static let weatherIconUrl: String = "http://openweathermap.org/img/wn/"
     }
 }
