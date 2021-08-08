@@ -26,4 +26,8 @@ extension ErrorResponse {
     static var somethingwrong: ErrorResponse {
         return .init(cod: "\(500)", message: "Some things wrong!")
     }
+    
+    static var failToParseJSON: ErrorResponse {
+        return .init(cod: "", message: "Fail to parse data")
+    }
 }
