@@ -1,5 +1,46 @@
 ### NAB_Assignment 
 
+## Update Feedback
+
+- [x] 1. No separation between data mode and viewModel 
+=> I create new layer is UseCase to get data from server, so viewModel just call know usecase
+- [x] 2. Used only UILabel
+=> I add another UILabel to show each data realated
+- [x] 3. There is no throttle or debounce operation to reduce the API call when typing. 
+=> I used .debounce(DispatchTimeInterval.seconds(2))
+- [x] 4. Lack of error handling in WeatherAPIService
+=> I add handle error
+- [x] 5. Using JSONDecoder to decode directly from Data type.
+- [x] 6. Optimize Model 
+
+#### WeatherConditionViewModelItem
+```
+enum WeatherConditionViewModelItem {
+    case condition(WeatherCondition)
+    case error(ErrorResponse)
+}
+```
+
+#### WeatherResponse
+```
+enum WeatherResponse {
+    case weatherForecast(WeatherForecast)
+    case error(ErrorResponse)
+    
+    func toWeatherConditionViewModelItem() -> [WeatherConditionViewModelItem] {
+        switch self {
+        case .weatherForecast(let weatherForecast):
+            return weatherForecast.weatherConditions.map({ $0.toWeatherConditionViewModelItem()})
+        case .error(let error):
+            return [error.toWeatherConditionViewModelItem()]
+        }
+    }
+}
+
+```
+
+
+
 Before open project: 
 
 ```
@@ -38,17 +79,3 @@ pod install
 * Application: to manage started scene
 * Dependence Injection: WeatherAPI 
 * MVVM Architecture using with RxSwift: To easy to create a binding between ViewModel and View
-
-
-### Feedback
-
-- [x] 1. No separation between data mode and viewModel 
-=> I create new layer is UseCase to get data from server, so viewModel just call know usecase
-- [x] 2. Used only UILabel
-=> I add another UILabel to show each data realated
-- [x] 3. There is no throttle or debounce operation to reduce the API call when typing. 
-=> I used .debounce(DispatchTimeInterval.seconds(2))
-- [x] 4. Lack of error handling in WeatherAPIService
-=> I add handle error
-
-
