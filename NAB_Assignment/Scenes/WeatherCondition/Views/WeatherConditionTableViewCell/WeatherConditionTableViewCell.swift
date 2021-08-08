@@ -9,23 +9,27 @@ import UIKit
 
 class WeatherConditionTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var contentLbl: UILabel!
+    @IBOutlet weak var dateLbl: UILabel!
+    @IBOutlet weak var averageTempLbl: UILabel!
+    @IBOutlet weak var pressureLbl: UILabel!
+    @IBOutlet weak var humidityLbl: UILabel!
+    @IBOutlet weak var descriptionLbl: UILabel!
+    
     @IBOutlet weak var weatherIconImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        contentLbl.numberOfLines = 0
     }
     
     func bind(viewModel: WeatherConditionViewModelItem) {
-        if let condition = viewModel.condition {
-            contentLbl.text = viewModel.content
-            weatherIconImageView.downloadImage(from: condition.weather[0].icon)
-        } else if let error = viewModel.error {
-            contentLbl.text = error.message
-            weatherIconImageView.image = nil
-        }
+//        if let condition = viewModel.condition {
+//            contentLbl.text = viewModel.content
+//            weatherIconImageView.downloadImage(from: condition.weather[0].icon)
+//        } else if let error = viewModel.error {
+//            contentLbl.text = error.message
+//            weatherIconImageView.image = nil
+//        }
     }
 }

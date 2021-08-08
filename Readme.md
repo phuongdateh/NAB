@@ -38,3 +38,12 @@ pod install
 * Application: to manage started scene
 * Dependence Injection: WeatherAPI 
 * MVVM Architecture using with RxSwift: To easy to create a binding between ViewModel and View
+
+
+### Feedback
+
+- [ ] 1. No separation between data mode and viewModel 
+=> I will create another layer is UseCase 
+- [ ] 2. Used only UILabel
+=> I add another UILabel to show data
+- [ ] 3. There is not thr

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7569D5F326BFCFCD006A9197 /* IUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569D5F226BFCFCD006A9197 /* IUsecase.swift */; };
+		7569D5F526BFD043006A9197 /* WeatherConditionUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569D5F426BFD043006A9197 /* WeatherConditionUsecase.swift */; };
 		A422B04626BA450000BF605C /* WeatherConditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A422B04426BA450000BF605C /* WeatherConditionTableViewCell.swift */; };
 		A422B04726BA450000BF605C /* WeatherConditionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A422B04526BA450000BF605C /* WeatherConditionTableViewCell.xib */; };
 		A422B04926BA4A8000BF605C /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A422B04826BA4A8000BF605C /* UITableViewCell.swift */; };
@@ -45,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		5A20013EC8A75F51C0D12346 /* Pods-NAB_Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NAB_Assignment.release.xcconfig"; path = "Target Support Files/Pods-NAB_Assignment/Pods-NAB_Assignment.release.xcconfig"; sourceTree = "<group>"; };
+		7569D5F226BFCFCD006A9197 /* IUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUsecase.swift; sourceTree = "<group>"; };
+		7569D5F426BFD043006A9197 /* WeatherConditionUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherConditionUsecase.swift; sourceTree = "<group>"; };
 		8A390BD89ED26F31FFCA113B /* Pods_NAB_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NAB_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A422B04426BA450000BF605C /* WeatherConditionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherConditionTableViewCell.swift; sourceTree = "<group>"; };
 		A422B04526BA450000BF605C /* WeatherConditionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherConditionTableViewCell.xib; sourceTree = "<group>"; };
@@ -105,6 +109,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7569D5F026BFCE45006A9197 /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				7569D5F226BFCFCD006A9197 /* IUsecase.swift */,
+				7569D5F426BFD043006A9197 /* WeatherConditionUsecase.swift */,
+			);
+			path = Usecases;
+			sourceTree = "<group>";
+		};
 		A422B04326BA44DA00BF605C /* WeatherConditionTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +157,7 @@
 				A434CCCE26B82275007FC211 /* Resources */,
 				A434CCD326B83797007FC211 /* Scenes */,
 				A440570326B99A2800DC6D62 /* ThirdParty */,
+				7569D5F026BFCE45006A9197 /* Usecases */,
 			);
 			path = NAB_Assignment;
 			sourceTree = "<group>";
@@ -408,8 +422,10 @@
 				A44056FE26B9996000DC6D62 /* WeatherConditionViewModel.swift in Sources */,
 				A434CCBC26B821DD007FC211 /* ViewController.swift in Sources */,
 				A422B04B26BA507900BF605C /* WeatherResponse.swift in Sources */,
+				7569D5F526BFD043006A9197 /* WeatherConditionUsecase.swift in Sources */,
 				A434CCE426B84D7B007FC211 /* Dictionary.swift in Sources */,
 				A44056F126B97B0F00DC6D62 /* ErrorResponse.swift in Sources */,
+				7569D5F326BFCFCD006A9197 /* IUsecase.swift in Sources */,
 				A44056E526B958AB00DC6D62 /* Configs.swift in Sources */,
 				A44056F526B98CFC00DC6D62 /* WeatherForecast.swift in Sources */,
 				A434CCDA26B84250007FC211 /* WeatherAPI.swift in Sources */,
