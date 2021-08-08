@@ -24,12 +24,23 @@ class WeatherConditionTableViewCell: UITableViewCell {
     }
     
     func bind(viewModel: WeatherConditionViewModelItem) {
-//        if let condition = viewModel.condition {
-//            contentLbl.text = viewModel.content
-//            weatherIconImageView.downloadImage(from: condition.weather[0].icon)
-//        } else if let error = viewModel.error {
-//            contentLbl.text = error.message
-//            weatherIconImageView.image = nil
-//        }
+        switch viewModel {
+        case .condition(let condition):
+            dateLbl.text = "Date: \(condition.dateString)"
+            averageTempLbl.text = "Average Temperature: \(condition.temp.average)°C"
+            pressureLbl.text = "Pressure: \(condition.pressure)"
+            humidityLbl.text = "Humidity: \(condition.humidity)%"
+            if condition.weather.isEmpty == false {
+                descriptionLbl.text = "Description: \(condition.weather[0].description)"
+                weatherIconImageView.downloadImage(from: condition.weather[0].icon)
+            }
+        case .error(let error):
+            dateLbl.text = ""
+            averageTempLbl.text = ""
+            humidityLbl.text = ""
+            descriptionLbl.text = ""
+            pressureLbl.text = error.message
+            weatherIconImageView.image = nil
+        }
     }
 }

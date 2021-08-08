@@ -29,7 +29,8 @@ class Application: NSObject {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {[weak self] in
             guard let weakSelf = self else { return }
-            let viewModel = WeatherConditionViewModel(provider: provider)
+            let usecase = WeatherConditionUsecase(provider: provider)
+            let viewModel = WeatherConditionViewModel(usecase: usecase)
             weakSelf.navigator.show(segue: .weatherCondition(viewModel), sender: nil, transition: .root(in: window))
         })
     }

@@ -19,8 +19,15 @@ class WeatherConditionViewModel: ViewModel, ViewModelType {
         let items: Driver<[WeatherConditionViewModelItem]>
     }
     
+    private let usecase: WeatherConditionUsecase
+    
+    init(usecase: WeatherConditionUsecase) {
+        self.usecase = usecase
+    }
+    
     func transform(input: Input) -> Output {
         let items = input.keywordTrigger
+            .debounce(DispatchTimeInterval.seconds(2))
             .filter({ (text) in
                 if text.count >= 3 {
                     return true
@@ -28,17 +35,9 @@ class WeatherConditionViewModel: ViewModel, ViewModelType {
                 return false
             })
             .flatMapLatest { (keyword) in
-                return self.provider.getForecastDaily(by: keyword)
+                return self.usecase.getForecastDaily(cityName: keyword)
                     .trackActivity(self.loading)
                     .asDriverOnErrorJustComplete()
-                    .map { results -> [WeatherConditionViewModelItem] in
-                        if let data = results.weatherForecast {
-                            let items = data.weatherConditions.map{( $0.toWeatherConditionViewModelItem())}
-                            return items
-                        } else {
-                            return [results.toWeatherConditionViewModelItem()]
-                        }
-                    }
             }
         return Output(items: items)
     }

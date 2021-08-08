@@ -21,15 +21,19 @@ class WeatherAPIService: WeatherAPI {
                 if let data = data,
                    let json  = String(data: data, encoding: .utf8),
                    let dictionary = json.toDictionary() {
-                    let responseData = WeatherResponse()
-                    if let weather = JSONDecoder().map(WeatherForecast.self, from: dictionary) {
-                        responseData.weatherForecast = weather
-                    } else if let errorData = JSONDecoder().map(ErrorResponse.self, from: dictionary) {
-                        responseData.error = errorData
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .secondsSince1970
+                    if let weather = decoder.map(WeatherForecast.self, from: dictionary) {
+                        observer.onNext(.weatherForecast(weather))
+                    } else if let errorData = decoder.map(ErrorResponse.self, from: dictionary) {
+                        observer.onNext(.error(errorData))
                     }
-                    observer.onNext(responseData)
-                    return
+                } else if let error = error as? URLError, error.code == .notConnectedToInternet {
+                    observer.onNext(.error(ErrorResponse.noInternet(code: error.code.rawValue, message: error.localizedDescription)))
+                } else {
+                    observer.onNext(.error(.somethingwrong))
                 }
+                return
             })
             request.resume()
             return Disposables.create {

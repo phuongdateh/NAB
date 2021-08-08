@@ -7,13 +7,16 @@
 
 import Foundation
 
-class WeatherResponse {
-    var weatherForecast: WeatherForecast?
-    var error: ErrorResponse?
+enum WeatherResponse {
+    case weatherForecast(WeatherForecast)
+    case error(ErrorResponse)
     
-    func toWeatherConditionViewModelItem() -> WeatherConditionViewModelItem {
-        let item = WeatherConditionViewModelItem()
-        item.error = self.error
-        return item
+    func toWeatherConditionViewModelItem() -> [WeatherConditionViewModelItem] {
+        switch self {
+        case .weatherForecast(let weatherForecast):
+            return weatherForecast.weatherConditions.map({ $0.toWeatherConditionViewModelItem()})
+        case .error(let error):
+            return [error.toWeatherConditionViewModelItem()]
+        }
     }
 }

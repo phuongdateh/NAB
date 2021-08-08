@@ -13,14 +13,6 @@ struct CityInfo: Decodable {
     let name: String
     let country: String
     
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-
-        id = (try? container.decode(Int.self, forKey: .id)) ?? 404
-        name = (try? container.decode(String.self, forKey: .name)) ?? ""
-        country = (try? container.decode(String.self, forKey: .country)) ?? ""
-    }
-    
     init() {
         self.id = 0
         self.name = ""

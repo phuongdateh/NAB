@@ -42,8 +42,13 @@ pod install
 
 ### Feedback
 
-- [ ] 1. No separation between data mode and viewModel 
-=> I will create another layer is UseCase 
-- [ ] 2. Used only UILabel
-=> I add another UILabel to show data
-- [ ] 3. There is not thr
+- [x] 1. No separation between data mode and viewModel 
+=> I create new layer is UseCase to get data from server, so viewModel just call know usecase
+- [x] 2. Used only UILabel
+=> I add another UILabel to show each data realated
+- [x] 3. There is no throttle or debounce operation to reduce the API call when typing. 
+=> I used .debounce(DispatchTimeInterval.seconds(2))
+- [x] 4. Lack of error handling in WeatherAPIService
+=> I add handle error
+
+

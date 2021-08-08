@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import RxSwift
+import RxCocoa
 
 class WeatherConditionUsecase: IUsecase {
     var provider: WeatherAPI
@@ -15,7 +15,11 @@ class WeatherConditionUsecase: IUsecase {
         self.provider = provider
     }
     
-    func getForecastDaily(cityName: String) -> Observable<WeatherResponse>  {
+    func getForecastDaily(cityName: String) -> Driver<[WeatherConditionViewModelItem]> {
         return provider.getForecastDaily(by: cityName)
+            .asDriverOnErrorJustComplete()
+            .map { response -> [WeatherConditionViewModelItem] in
+                return response.toWeatherConditionViewModelItem()
+            }
     }
 }

@@ -16,20 +16,12 @@ protocol ViewModelType {
 }
 
 class ViewModel: NSObject {
-
-    let provider: WeatherAPI
+    
     let disposeBag = DisposeBag()
     
     let loading = ActivityIndicator()
     let headerLoading = ActivityIndicator()
     let footerLoading = ActivityIndicator()
-    
-    
-    init(provider: WeatherAPI) {
-        self.provider = provider
-        super.init()
-        
-    }
     
     deinit {
         print("\(type(of: self)) Deinited")
